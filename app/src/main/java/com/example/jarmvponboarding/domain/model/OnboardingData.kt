@@ -22,5 +22,7 @@ data class OnboardingCard(
     val backgroundColor: Color,
     val cardColor: Color,
     val strokeStartColor: Color,
-    val strokeEndColor: Color
+    val strokeEndColor: Color,
+    val startGradient: Color,
+    val endGradient: Color
 )

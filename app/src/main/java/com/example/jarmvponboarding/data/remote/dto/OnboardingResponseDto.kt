@@ -51,9 +51,10 @@ data class EducationCardDto(
     @SerialName("collapsedStateText") val collapsedStateText: String,
     @SerialName("expandStateText") val expandStateText: String,
     @SerialName("backGroundColor") val backGroundColor: String,
-    @SerialName("startGradient") val cardColor: String,
+    @SerialName("startGradient") val startGradient: String,
     @SerialName("strokeStartColor") val strokeStartColor: String,
-    @SerialName("strokeEndColor") val strokeEndColor: String
+    @SerialName("strokeEndColor") val strokeEndColor: String,
+    @SerialName("endGradient") val endGradient: String,
 )
 
 fun EducationCardDto.toOnboardingCard(): OnboardingCard {
@@ -62,9 +63,12 @@ fun EducationCardDto.toOnboardingCard(): OnboardingCard {
         expandedText = this.expandStateText,
         imageUrl = this.image,
         backgroundColor = hexToColor(this.backGroundColor),
-        cardColor = hexToColor(this.cardColor),
+        cardColor = hexToColor(this.backGroundColor),
         strokeStartColor = hexToColor(this.strokeStartColor),
-        strokeEndColor = hexToColor(this.strokeEndColor)
+        strokeEndColor = hexToColor(this.strokeEndColor),
+        startGradient = hexToColor(this.startGradient),
+        endGradient = hexToColor(this.endGradient),
+
     )
 }
 
