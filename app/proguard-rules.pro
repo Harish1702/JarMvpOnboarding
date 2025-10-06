@@ -1,21 +1,25 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
 #
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Retrofit
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-keepattributes Signature, Exceptions
+
+
+# Keep the generic Continuation class used by suspend functions
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+# For suspend functions in Retrofit interfaces, keep the generic return type
+-if interface * { @retrofit2.http.* public *** *(...); }
+-keep,allowoptimization,allowshrinking,allowobfuscation class <3>
+
+
+
+
+# It's also a good idea to keep Kotlin reflection metadata, as libraries can rely on it.
+-keep class kotlin.reflect.** { *; }
+-keep class org.jetbrains.kotlin.** { *; }
+-keep class kotlin.jvm.internal.Intrinsics { *; }
