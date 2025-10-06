@@ -157,7 +157,7 @@ If you don't want to build the project from the source, you can download and ins
 1.  **Clone the repository:**
     Open your terminal or command prompt and run the following command to clone the project to your local machine:
     ```bash
-    git clone [https://github.com/harish123/jarmvponboarding.git](https://github.com/harish123/jarmvponboarding.git)
+    git clone [https://github.com/harish1702/jarmvponboarding.git](https://github.com/harish1702/jarmvponboarding.git)
     ```
 
 2.  **Open in Android Studio:**
