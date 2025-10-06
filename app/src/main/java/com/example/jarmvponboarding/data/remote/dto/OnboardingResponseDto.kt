@@ -22,7 +22,8 @@ fun OnboardingResponseDto.toOnboardingData(): OnboardingData {
         collapseCardTiltInterval = this.data.manualBuyEducationData.collapseCardTiltInterval,
         collapseExpandIntroInterval = this.data.manualBuyEducationData.collapseExpandIntroInterval,
         introTitle = this.data.manualBuyEducationData.introTitle,
-        introSubtitle = this.data.manualBuyEducationData.introSubtitle
+        introSubtitle = this.data.manualBuyEducationData.introSubtitle,
+        ctaLottie = this.data.manualBuyEducationData.ctaLottie
     )
 }
 
@@ -40,7 +41,8 @@ data class ManualBuyEducationDataDto(
     @SerialName("collapseCardTiltInterval") val collapseCardTiltInterval: Long = 600L,
     @SerialName("collapseExpandIntroInterval") val collapseExpandIntroInterval: Long = 600L,
     @SerialName("introTitle") val introTitle: String = "Welcome to",
-    @SerialName("introSubtitle") val introSubtitle: String = "Onboarding"
+    @SerialName("introSubtitle") val introSubtitle: String = "Onboarding",
+    @SerialName("ctaLottie") val ctaLottie: String?
 )
 
 @Serializable

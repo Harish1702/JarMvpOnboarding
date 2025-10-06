@@ -1,6 +1,7 @@
 package com.example.jarmvponboarding.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.jarmvponboarding.domain.model.OnboardingData
 import com.example.jarmvponboarding.domain.usecase.GetOnboardingDataUseCase
@@ -49,6 +50,15 @@ class OnboardingViewModel(
                     }
                 }
             }
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    class Factory(
+        private val getOnboardingDataUseCase: GetOnboardingDataUseCase
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return OnboardingViewModel(getOnboardingDataUseCase) as T
         }
     }
 }
